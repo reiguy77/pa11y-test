@@ -1,0 +1,17 @@
+{
+  "defaults": {
+    "ignore": [ "notice", "warning" ],
+    "standard": "WCAG2AA",
+    "chromeLaunchConfig": {
+			"args": ["--no-sandbox"]
+		},
+    "reporters": [
+            ["cli"],
+            ["json", { "fileName": "./results.json" }]
+        ],
+		"timeout": 10000
+  },
+  "urls": [
+  "http://localhost:1234"
+     ]
+}
