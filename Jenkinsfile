@@ -3,11 +3,7 @@ pipeline{
       stages {
         stage('build'){
         agent {
-          dockerfile {
-              filename 'Dockerfile'
-              dir 'server'
-              args '-v /tmp:/tmp'
-          }
+          sh "docker-compose up -d"
         }
         steps{
           echo "build started"
