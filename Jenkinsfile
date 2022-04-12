@@ -1,14 +1,15 @@
 pipeline{
-    agent {
-    dockerfile {
-        filename 'Dockerfile'
-        dir 'server'
-        args '-v /tmp:/tmp'
-    }
-    }
+    agent any
     checkout scm
       stages {
         stage('build'){
+        agent {
+          dockerfile {
+              filename 'Dockerfile'
+              dir 'server'
+              args '-v /tmp:/tmp'
+          }
+        }
         steps{
           echo "build started"
           }
